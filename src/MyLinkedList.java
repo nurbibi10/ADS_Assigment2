@@ -56,6 +56,28 @@ public class MyLinkedList<T> implements MyList<T> {
         }
         size--;
     }
+    public void removeFirst() {
+        if (head != null) {
+            head = head.next;
+            size--;
+        }
+    }
+
+    public void removeLast() {
+        if (head != null) {
+            if (head.next == null) {
+                head = null;
+            } else {
+                Node<T> current = head;
+                while (current.next.next != null) {
+                    current = current.next;
+                }
+                current.next = null;
+            }
+            size--;
+        }
+    }
+
 
 
 }
