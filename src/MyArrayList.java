@@ -16,12 +16,13 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     public T getLast() {
+        //some pretty code goes here
     }
 
     public void removeLast() {
     }
 
     public boolean isEmpty() {
+        //some pretty code goes here
     }
-    //some pretty code goes here
 }
