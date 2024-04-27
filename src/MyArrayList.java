@@ -11,5 +11,8 @@ public class MyArrayList<T> implements MyList<T> {
     public void addElement(T data) {
         //some pretty code goes here
     }
+
+    public void addLast(T item) {
+    }
     //some pretty code goes here
 }
