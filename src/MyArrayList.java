@@ -14,5 +14,11 @@ public class MyArrayList<T> implements MyList<T> {
 
     public void addLast(T item) {
     }
+
+    public T getLast() {
+    }
+
+    public void removeLast() {
+    }
     //some pretty code goes here
 }
