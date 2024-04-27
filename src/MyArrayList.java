@@ -20,5 +20,8 @@ public class MyArrayList<T> implements MyList<T> {
 
     public void removeLast() {
     }
+
+    public boolean isEmpty() {
+    }
     //some pretty code goes here
 }
