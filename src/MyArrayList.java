@@ -25,4 +25,7 @@ public class MyArrayList<T> implements MyList<T> {
     public boolean isEmpty() {
         //some pretty code goes here
     }
+
+    public int size() {
+    }
 }
