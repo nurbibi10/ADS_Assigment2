@@ -26,6 +26,11 @@ public class MyArrayList<T> implements MyList<T> {
         return (T) arr[size - 1];
     }
 
+    public void addFirst(T data) {
+        add(0, data);
+    }
+
+
     public void removeLast() {
         if (size == 0) {
             return; // or throw an exception
@@ -65,7 +70,7 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
 
-    public void add(T data) {
+    public void add(int i, T data) {
         if (size < arr.length) {
             arr[size++] = data;
         }
