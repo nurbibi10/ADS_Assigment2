@@ -32,7 +32,7 @@ public class MyMinHeap<T> {
     }
 
     public void insert(T data) {
-        arr.add(data);
+        arr.add(0, data);
         traverseUp(arr.size() - 1);
     }
 
