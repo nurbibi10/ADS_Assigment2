@@ -31,6 +31,17 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
 
+    public void remove(int index) {
+        if (index < 0 || index >= size) {
+            return;
+        }
+        for (int i = index; i < size - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[size - 1] = null; // Clear the reference to the last element
+        size--; // Decrement the size
+    }
+
     public void removeLast() {
         if (size == 0) {
             return; // or throw an exception
