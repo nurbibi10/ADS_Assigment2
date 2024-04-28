@@ -24,10 +24,6 @@ public class MyLinkedList<T> implements MyList<T> {
         size++;
     }
 
-    public int getSize() {
-        return size;
-    }
-
     public T getData(int index) {
         checkIndex(index);
         Node<T> current = head;
@@ -37,9 +33,11 @@ public class MyLinkedList<T> implements MyList<T> {
         return current.data;
     }
 
-    private void checkIndex(int index) {
-        if (index < 0 || index >= size)
-            throw new IndexOutOfBoundsException("index not correct");
+    private boolean checkIndex(int index) {
+        if (index < 0 || index >= size) {
+            return false;
+        }
+        return true;
     }
 
     public void remove(int index) {
@@ -56,27 +54,7 @@ public class MyLinkedList<T> implements MyList<T> {
         }
         size--;
     }
-    public void removeFirst() {
-        if (head != null) {
-            head = head.next;
-            size--;
-        }
-    }
 
-    public void removeLast() {
-        if (head != null) {
-            if (head.next == null) {
-                head = null;
-            } else {
-                Node<T> current = head;
-                while (current.next.next != null) {
-                    current = current.next;
-                }
-                current.next = null;
-            }
-            size--;
-        }
-    }
 
 
 

@@ -12,20 +12,78 @@ public class MyArrayList<T> implements MyList<T> {
         //some pretty code goes here
     }
 
-    public void addLast(T item) {
+    public void addLast(T data) {
+        if (size == arr.length) {
+            return;
+        }
+        arr[size++] = data;
     }
 
     public T getLast() {
-        //some pretty code goes here
+        if (size == 0) {
+            return null; // or throw an exception
+        }
+        return (T) arr[size - 1];
     }
 
     public void removeLast() {
-    }
-
-    public boolean isEmpty() {
-        //some pretty code goes here
+        if (size == 0) {
+            return; // or throw an exception
+        }
+        arr[size - 1] = null;
+        size--;
     }
 
     public int size() {
+        return size;
+    }
+
+    public T getFirst() {
+        if (size == 0) {
+            return null; // or throw an exception
+        }
+        return arr[0];
+    }
+
+    public void removeFirst() {
+        if (size == 0) {
+            return; // or throw an exception
+        }
+        // Shift all elements to the left to remove the first element
+        for (int i = 0; i < size - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[size - 1] = null; // clear the reference to the last element
+        size--; // decrement the size
+    }
+
+    public void printLst() {
+        for (int i = 0; i < size; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+
+    public void add(T data) {
+        if (size < arr.length) {
+            arr[size++] = data;
+        }
+    }
+
+
+    public void set(int index, T data) {// Check if the index is out of bounds
+        if (index < 0 || index >= size) {
+            return; // perform any other action as needed
+        }
+        arr[index] = data; // the element at the specified index
+    }
+
+    public T get(int index) {
+        if (index < 0 || index >= size) {
+            return null; // throw an exception, depending on your requirements
+        }
+        return arr[index]; // return the element at the specified index
+
     }
 }
