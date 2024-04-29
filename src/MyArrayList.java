@@ -102,4 +102,59 @@ public class MyArrayList<T> implements MyList<T> {
         return arr[index]; // return the element at the specified index
 
     }
+    public void clear() {
+        arr = (T[]) new Object[5];
+        size = 0;
+    }
+
+    public int indexOf(Object object) {
+        for (int i = 0; i < size; i++) {
+            if (arr[i] == object) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public int lastIndexOf(Object object) {
+        for (int i = size - 1; i >= 0; i--) {
+            if (arr[i] == object) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+    public Object[] toArray() {
+        Object[] newarr = new Object[size];
+
+        for (int i = 0; i < size; i++) {
+            newarr[i] = arr[i];
+        }
+
+        return newarr;
+    }
+
+    public boolean exists(Object object) {
+        for (int i = 0; i < size; i++) {
+            if (arr[i] == object) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void sort() {
+        T t;
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < size - i - 1; j++) {
+                if (((Comparable)arr[j]).compareTo(arr[j + 1]) > 0) {
+                    t = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = t;
+                }
+            }
+        }
+    }
 }
