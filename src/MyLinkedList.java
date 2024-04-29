@@ -11,7 +11,6 @@ public class MyLinkedList<T> implements MyList<T> {
         size = 0;
     }
 
-    @Override
     public void addElement(T data) {
         Node<T> newNode = new Node<T>(data);
         if (head == null) {
@@ -208,6 +207,4 @@ public class MyLinkedList<T> implements MyList<T> {
     public int size() {
         return size;
     }
-
-
 }
