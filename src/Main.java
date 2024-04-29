@@ -9,8 +9,8 @@ public class Main {
         myLinkedList.addElement(4.7);
         myLinkedList.addElement('A');
 
-        System.out.println("Index of an index 3:" + myLinkedList.getData(3));
+        System.out.println("Index of an index 3:" + myLinkedList.get(3));
         myLinkedList.remove(3);
-        System.out.println("Index of an index 3:" + myLinkedList.getData(3));
+        System.out.println("Index of an index 3:" + myLinkedList.get(3));
     }
 }

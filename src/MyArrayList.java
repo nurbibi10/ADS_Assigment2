@@ -23,7 +23,7 @@ public class MyArrayList<T> implements MyList<T> {
         if (size == 0) {
             return null; // or throw an exception
         }
-        return (T) arr[size - 1];
+        return arr[size - 1];
     }
 
     public void addFirst(T data) {
@@ -86,6 +86,22 @@ public class MyArrayList<T> implements MyList<T> {
             arr[size++] = data;
         }
     }
+    public void add(T data) {
+        if (size >= arr.length) {
+            increaseBuffer();
+        }
+        arr[size++] = data;
+    }
+
+    private void increaseBuffer() {
+        T[] newarr = (T[]) new Object[2 * size];
+
+        for (int i = 0; i < arr.length; i++) {
+            newarr[i] = arr[i];
+        }
+
+        arr = newarr;
+    }
 
 
     public void set(int index, T data) {// Check if the index is out of bounds
@@ -127,13 +143,11 @@ public class MyArrayList<T> implements MyList<T> {
         return -1;
     }
     public Object[] toArray() {
-        Object[] newarr = new Object[size];
+        Object[] nwarr = new Object[size];
 
-        for (int i = 0; i < size; i++) {
-            newarr[i] = arr[i];
-        }
+        System.arraycopy(arr, 0, nwarr, 0, size);
 
-        return newarr;
+        return nwarr;
     }
 
     public boolean exists(Object object) {
