@@ -1,7 +1,7 @@
 
 public class Node<T> {
     T data;
-    Node next;
+    Node<T> next;
 
     public Node(T data) {
         this.data = data;

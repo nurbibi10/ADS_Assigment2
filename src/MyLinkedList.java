@@ -1,24 +1,24 @@
 
 public class MyLinkedList<T> implements MyList<T> {
     private Node<T> head;
+    private Node<T> tail;
     private int size;
 
     public MyLinkedList() {
         head = null;
+        tail = null;
         size = 0;
     }
 
     @Override
     public void addElement(T data) {
-        Node newNode = new Node(data);
+        Node<T> newNode = new Node<T>(data);
         if (head == null) {
             head = newNode;
         }
         else {
             Node<T> currentNode = head;
-            while (currentNode.next != null){
-                currentNode = currentNode.next;
-            }
+            while (currentNode.next != null) currentNode = currentNode.next;
             currentNode.next = newNode;
         }
         size++;
